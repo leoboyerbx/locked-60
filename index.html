@@ -5,62 +5,227 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>Locked in 60'</title>
+
+    <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/aliseo.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700|Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script defer src="assets/lib/jquery/jquery.min.js"></script>
+    <script defer src="assets/lib/countdown.min.js"></script>
     <script defer src="assets/js/app.js"></script>
 </head>
 <body>
     <header id="intro">
+        <video loop poster="assets/img/poster-video.jpg" id="bgvid">
+            <source src="assets/media/video_test.mp4" type="video/mp4">
+        </video>
+        <div id="bgimg"></div>
+        
+        <div id="fgvid">
+            <video controls poster="assets/img/poster-video.jpg">
+                <source src="assets/media/video_test.mp4" type="video/mp4">
+            </video>
+        </div>
+        
         <div id="intro-container">
             <div id="logo">
                 <img src="assets/img/logo.svg" alt="">
             </div>
+            <div id="nom_escapegame">
+                <p> Locked in <span id="count">60</span>' </p>
+            </div>
+            <div id="agrenoble">
+                <p> Escape game à Grenoble </p>
+            </div>
+            <div id="play-button">
+                <div id="play-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <div id="play-text">
+                    <span>
+                        Regarder la vidéo
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="arrow-scroll">
+            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+                <style type="text/css">
+                    .st0 {
+                        fill: none;
+                        stroke: #F4F4F4;
+                        stroke-width: 10;
+                        stroke-miterlimit: 10;
+                    }
+                </style>
+                <polyline class="st0" points="21,105.5 151.4,194.5 279,105.5" />
+            </svg>
+
         </div>
     </header>
     <main id="page">
         <div class="container">
             <div class="row">
-                <h1>Hello Words</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse est facilis incidunt iste itaque molestiae natus odit, praesentium quasi repellendus? Aliquam eius impedit incidunt libero maxime nemo non quibusdam vero.</p>
-            </div>
-            <div class="t3dtest">
-                <div class="t3dbg"></div>
-                <div class="t3dcontent">
-                    <h1>Contenu 3d</h1>
-                    <h1>2e ligne</h1>
-                </div>
-            </div>
-            <div class="row">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus corporis ducimus error in ipsam ipsum iusto libero magni minus nam non numquam, officiis perspiciatis quo reiciendis suscipit voluptas voluptate voluptates!
-                </p>
+                <h1 class="titre-section">Le concept</h1>
+                <p id="texte-intro" class="text-contenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi bibendum sit amet mi in tempus. Phasellus diam lorem, ullamcorper eget mauris sed, fringilla aliquet dolor. Quisque iaculis luctus consequat. Ut sed orci id arcu dictum rutrum. Curabitur congue interdum ante, eu ullamcorper dolor euismod elementum. Ut vitae ultricies elit, id facilisis velit. Curabitur purus augue, imperdiet ut lacus vitae, hendrerit bibendum diam.</p>
             </div>
         </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image"></div>
+                </div>
+                <div class="col-lg-6" id="marges1">
+                    <h2 class="titre-section"> Résolvez des énigmes </h2>
+                    <p class="texte-image text-contenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi bibendum sit amet mi in tempus. Phasellus diam lorem, ullamcorper eget mauris sed, fringilla aliquet dolor. Quisque iaculis luctus consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row" id="row1">
+                <div class="col-lg-6" id="marges2">
+                    <h2 class="titre-section"> Sortez le plus vite possible </h2>
+                    <p class="texte-image text-contenu">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi bibendum sit amet mi in tempus. Phasellus diam lorem, ullamcorper eget mauris sed, fringilla aliquet dolor. Quisque iaculis luctus consequat.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row" id="chiffres-cle">
+                <div class="col-4 centre">
+                    <p class="chiffres"><span id="surface">300</span>m²</p>
+                    <p class="police1">D'espace disponible</p>
+                </div>
+                <div class="col-4 centre">
+                    <p id="chiffres2">3</p>
+                    <p id="police2">Salles dont le thème évolue au fil du temps</p>
+                </div>
+                <div class="col-4 centre">
+                    <p class="chiffres"><span id="j3">3</span> à <span id="j5">5</span></p>
+                    <p class="police1">Joueurs en coopération</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1 class="titre-section">Les salles du moment</h1>
+            <div class="row" id="chiffres-cle2">
+              <div class="col-4">
+                    <a href="">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="assets/img/issou.png" alt="Thème 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Salle 1</h5>
+                            <p class="card-text">Nom du thème</p>
+                        </div>
+                    </div>
+                    </a>
+              </div>
+              <div class="col-4">
+                    <a href="">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="assets/img/issou2.png" alt="Thème 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Salle 2</h5>
+                            <p class="card-text">Nom du thème</p>
+                        </div>
+                    </div>
+                    </a>
+              </div>
+              <div class="col-4">
+                    <a href="">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="assets/img/issou3.png" alt="Thème 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Salle 3</h5>
+                            <p class="card-text">Nom du thème</p>
+                        </div>
+                    </div>
+                    </a>
+              </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="avant-lancement-wrapper">
+                <div id="rect-lancement"></div>
+                <div class="row" id="avant-lancement-timer">
+                    <div class="col-3">
+                        <p><span class="count-data" id="count-jours">76</span>j</p>
+                    </div>
+                    <div class="col-3">
+                        <p><span class="count-data" id="count-heures">05</span>h</p>
+                    </div>
+                    <div class="col-3">
+                        <p><span class="count-data" id="count-minutes">23</span>m</p>
+                    </div>
+                    <div class="col-3">
+                        <p><span class="count-data" id="count-secondes">19</span>s</p>
+                    </div>
+                </div>
+                <div class="row" id="avant-lancement">
+                    <div class="col-12">
+                      <h1 id="texte-lancement"> Avant le lancement </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="chiffres-cle5">
+                <div class="col-12">
+                    <a href="">Réserver</a>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="container-fluid">
+            <div id="chiffres-clefooter">
+                <div class="row">
+                    <div class="col-4">
+                        <h1 class="titre-footer">Contactez-nous</h1>
+                        <p class="contenu-footer">
+                            Email : lockedin60@gmail.com <br/>
+                            Téléphone : 04 74 85 94 75
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <h1>Suivez-nous</h1><!--
+                        <img src="" alt="Facebook">
+                        <img src="" alt="Twitter">
+                        <img src="" alt="Instagram"> -->
+                        <a href='' class="fa-2x fab fa-facebook"></a>
+                        <a href='' class="fa-2x fab fa-twitter"></a>
+                        <a href='' class="fa-2x fab fa-instagram"></a>
+                    </div>
+                    <div class="col-4">
+                        <h1 class="titre-footer">Où nous trouver</h1>
+                        <p class="contenu-footer">
+                            25 rue d'Issou <br/>
+                            Grenoble, 38000 <br/>
+                            <a href="" id="carte">Voir sur la carte</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p id="mentions">blabla mentions légales blabla</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
+
+    <div id="menubutton">
+        <div class="menubar"></div>
+        <div class="menubar"></div>
+        <div class="menubar"></div>
+    </div>
 </body>
 </html>

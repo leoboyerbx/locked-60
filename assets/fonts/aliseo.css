@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'ALISEO';
+    src: url('ALISEORegular.woff2') format('woff2'),
+        url('ALISEORegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
