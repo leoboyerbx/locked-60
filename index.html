@@ -117,22 +117,22 @@
 
         <div class="container">
             <h1 class="titre-section">Les salles du moment</h1>
-            <div class="row" id="chiffres-cle2">
-              <div class="col-4">
+            <div class="row scroll-appear" id="salles">
+              <div class="col-lg-4">
                     <a href="">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img/issou.png" alt="Thème 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Salle 1</h5>
-                            <p class="card-text">Nom du thème</p>
+                        <div class="card" style="width: 18rem;">
+                            <span class="card-img-top" style="background-image: url(assets/img/salle1.jpg)"></span>
+                            <div class="card-body">
+                                <h5 class="card-title">Salle 1</h5>
+                                <p class="card-text">Nom du thème</p>
+                            </div>
                         </div>
-                    </div>
                     </a>
               </div>
-              <div class="col-4">
+              <div class="col-lg-4">
                     <a href="">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img/issou2.png" alt="Thème 2">
+                        <span class="card-img-top" style="background-image: url(assets/img/salle2.jpg)"></span>
                         <div class="card-body">
                             <h5 class="card-title">Salle 2</h5>
                             <p class="card-text">Nom du thème</p>
@@ -140,10 +140,10 @@
                     </div>
                     </a>
               </div>
-              <div class="col-4">
+              <div class="col-lg-4">
                     <a href="">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img/issou3.png" alt="Thème 3">
+                        <span class="card-img-top" style="background-image: url(assets/img/salle3.jpg)"></span>
                         <div class="card-body">
                             <h5 class="card-title">Salle 3</h5>
                             <p class="card-text">Nom du thème</p>
@@ -155,8 +155,10 @@
         </div>
 
         <div class="container">
-            <div id="avant-lancement-wrapper">
-                <div id="rect-lancement"></div>
+            <div id="avant-lancement-wrapper" class="not-visible scroll-appear">
+                <div id="rect-lancement">
+                    <div id="rect-lancement-color"></div>
+                </div>
                 <div class="row" id="avant-lancement-timer">
                     <div class="col-3">
                         <p><span class="count-data" id="count-jours">76</span>j</p>
@@ -173,19 +175,19 @@
                 </div>
                 <div class="row" id="avant-lancement">
                     <div class="col-12">
-                      <h1 id="texte-lancement"> Avant le lancement </h1>
+                      <h1 id="texte-lancement" class="scroll-appear"> Avant le lancement </h1>
                     </div>
                 </div>
             </div>
             <div class="row" id="chiffres-cle5">
-                <div class="col-12">
-                    <a href="">Réserver</a>
+                <div class="col-12 scroll-appear" id="resa-button-wrapper">
+                    <a href="" id="resa-button">Réserver</a>
                 </div>
             </div>
 
         </div>
 
-        <footer class="container-fluid">
+        <footer class="container-fluid" id="footer-accueil">
             <div id="chiffres-clefooter">
                 <div class="row">
                     <div class="col-4">
