@@ -44,18 +44,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h1 id="titreFormulaire"> Formulaire de réservation </h1>
+                    <h1 class="titreFormulaire">Réserver</h1>
+                    <form action="" id="form1" method="post">
+                        <p class="animate"><input class="resainput" type="text" name="nom" placeholder="Nom / Prénom"/></p>
+                        <p class="animate"><input class="resainput" type="text" name="date" placeholder="Date de réservation souhaitée"/></p>
+                        <p class="animate"><input class="resainput" type="text" name="heure" placeholder="Heure souhaitée"/></p>
+                        <p class="animate">
+                            <!--                <p><input type="text" name="salle" placeholder="Numéro de salle (1, 2, 3)"/></p>-->
+                            <select class="resainput" name="salleselect" id="salle-select">
+                                <option value="def" disabled selected>Salle souhaitée</option>
+                                <option value="1">Prisonniers de la Bastille</option>
+                                <option value="2">Asylum</option>
+                                <option value="3">La légende du Titanic</option>
+                            </select>
+                        </p>
+                        <p class="animate"><input class="resainput type="text" name="nombre" placeholder="Nombre de personnes participant"/></p>
+                        <p class="animate"><input class="resainput" type="text" name="numero" placeholder="Numéro de téléphone"/></p>
+                        <p><button type="submit" class="btn btn-outline-danger">Valider  <i class="fas fa-chevron-right"></i></button></p>
+                    </form>
+                </div>
+                <div class="col-6 centre">
+                    <h1 class="titreFormulaire anim-delay-5">Tarifs</h1>
                 </div>
             </div>
-            <form action="" id="form1" method="post">
-                <p><input type="text" name="nom" placeholder="Nom / Prénom"/></p>
-                <p><input type="text" name="date" placeholder="Date de réservation souhaitée"/></p>
-                <p><input type="text" name="heure" placeholder="Heure souhaitée"/></p>
-                <p><input type="text" name="salle" placeholder="Numéro de salle (1, 2, 3)"/></p>
-                <p><input type="text" name="nombre" placeholder="Nombre de personnes participant"/></p>
-                <p><input type="text" name="numero" placeholder="Numéro de téléphone"/></p>
-                <p><button type="submit" class="btn btn-outline-danger">Valider  <i class="fas fa-chevron-right"></i></button></p>
-            </form>
         </div>
     </section>
     <br><br><br><br>
