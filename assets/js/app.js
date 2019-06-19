@@ -174,6 +174,7 @@ $(document).ready(() => {
 
 
     //Gestion du menu
+
     function toggleMenu() {
         $('#menubutton').toggleClass('open')
         $('#menu').toggleClass('open')
