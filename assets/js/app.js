@@ -1,9 +1,12 @@
 $(document).ready(() => {
+    // variables "globales"
+    let menuOpened = false;
+    let startPage = true // BOoléen indiquant si on est sur la page de déart (= on n'a pas scrollé)
+
     // On prépare la page
     $('#page').addClass('loaded')
 
 
-    let startPage = true // BOoléen indiquant si on est sur la page de déart (= on n'a pas scrollé)
     function scrollToPage() {
         $("#page").addClass('visible').focus()
         $("#intro-container").addClass('min')
@@ -34,10 +37,12 @@ $(document).ready(() => {
     }
 
     window.addEventListener("wheel", ev => {
-        if (ev.deltaY > 0 && startPage) { // Si scrollé vers le bas
-            scrollToPage()
-        } else if (ev.deltaY < 0 && !startPage && $('#page').scrollTop() === 0) {
-            scrollToStart()
+        if (!menuOpened) {
+            if (ev.deltaY > 0 && startPage) { // Si scrollé vers le bas
+                scrollToPage()
+            } else if (ev.deltaY < 0 && !startPage && $('#page').scrollTop() === 0) {
+                scrollToStart()
+            }
         }
     })
     window.addEventListener('keyup', function(ev) {
@@ -48,23 +53,46 @@ $(document).ready(() => {
     $('#arrow-scroll').click(scrollToPage)
 
 
-    let observer = new IntersectionObserver(function (observables) {
+    let appearObserver = new IntersectionObserver(function (observables) {
         // observables est un tableau contenant des IntersectionObserverEntry
-        console.log(observables)
         observables.forEach(observable => {
             if (observable.intersectionRatio > 0.5) {
-                console.log("hey")
                 observable.target.classList.remove('not-visible')
-                observer.unobserve(observable.target)
+                appearObserver.unobserve(observable.target)
             }
         })
     }, {
         root: $('#page').get(0),
-        threshold: [0.5]
+        threshold: [0.6]
     })
+
+
     document.querySelectorAll('.scroll-appear').forEach(el => {
         el.classList.add('not-visible')
-        observer.observe(el)
+        appearObserver.observe(el)
+    })
+
+    let countObserver = new IntersectionObserver(function (observables) {
+        // observables est un tableau contenant des IntersectionObserverEntry
+        observables.forEach(observable => {
+            if (observable.intersectionRatio > 0.5) {
+                let val = parseInt(observable.target.innerHTML)
+                countTo(observable.target, val, parseInt(observable.target.dataset.spacing), parseInt(observable.target.dataset.offset))
+                countObserver.unobserve(observable.target)
+            }
+        })
+    }, {
+        root: $('#page').get(0),
+        threshold: [0.6]
+    })
+
+    document.querySelectorAll('.count-increase').forEach(item => {
+        countObserver.observe(item)
+    })
+
+    document.querySelectorAll('.scroll-appear').forEach(el => {
+        el.classList.add('not-visible')
+        appearObserver.observe(el)
     })
 
 
@@ -137,9 +165,97 @@ $(document).ready(() => {
     // rectangle parrallax
     let initTop = $('#avant-lancement-wrapper').position().top
     console.log(initTop)
-    $('#page').scroll(function(ev) {
-        let val = ($('#rect-lancement').get(0).getBoundingClientRect().top)/5 - $(window).height()/10
+    function updateRect() {
+        let val = ($('#rect-lancement').get(0).getBoundingClientRect().top)/4 - $(window).height()/10
         $('#rect-lancement').css('transform', 'translate3d(0, '+ (-val) +'px, 0)')
+    }
+    $('#page').scroll(updateRect)
+
+
+    //Gestion du menu
+    function toggleMenu() {
+        $('#menubutton').toggleClass('open')
+        $('#menu').toggleClass('open')
+        $('#viewport').toggleClass('menuopen')
+        menuOpened = !menuOpened
+    }
+    function closeMenu() {
+        $('#menubutton').removeClass('open')
+        $('#menu').removeClass('open')
+        $('#viewport').removeClass('menuopen')
+        menuOpened = false
+    }
+    $('#menubutton').click(toggleMenu)
+
+    function goTo(selector) {
+        window.location.hash = "";
+        if (startPage && selector == "#") {
+            closeMenu()
+        } else {
+            $('#transi-cache-menu').addClass('cacher')
+            window.setTimeout(function() {
+                if(selector === "#") {
+                    $('#concept').get(0).scrollIntoView()
+                    $('#page').addClass('no-transition')
+                    $('#intro-container').addClass('no-transition')
+                    scrollToStart()
+                    window.setTimeout(function() {
+                        $('#page').removeClass('no-transition')
+                        $('#intro-container').removeClass('no-transition')
+                    }, 10)
+                } else {
+                    if (startPage) {
+                        $('#page').addClass('no-transition')
+                        scrollToPage()
+                        $('#page').removeClass('no-transition')
+                    }
+                    document.querySelector(selector).scrollIntoView()
+                }
+                $('#transi-cache-menu').removeClass('cacher')
+                setTimeout(closeMenu, 300)
+            }, 500)
+        }
+    }
+    $('#menulist a').click(function (ev) {
+        ev.preventDefault()
+        goTo($(this).attr('href'))
     })
+
+
+
+
+    // Gestion des pages extérieures
+    function showExternalPage() {
+        $('#viewport').addClass('extpage')
+    }
+    function hideExternalPage() {
+        $('#viewport').removeClass('extpage')
+    }
+
+    function loadPage(page) {
+        // history.pushState(false, false, '#'+page)
+        window.location.hash = '#' + page
+        $('#extpage-content').load(page+'.html #content', function() {
+            showExternalPage()
+            console.log('hey')
+        })
+    }
+
+    let autoPage = function () {
+        let hash = document.location.hash
+        if (!hash) {
+            hideExternalPage()
+        } else {
+            let path = hash.substring(1)
+            loadPage(path)
+        }
+    }
+
+    window.addEventListener('popstate', ev => {
+        ev.preventDefault()
+        autoPage()
+    })
+
+    autoPage()
 
 })
