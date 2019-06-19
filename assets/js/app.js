@@ -2,6 +2,7 @@ $(document).ready(() => {
     // variables "globales"
     let menuOpened = false;
     let startPage = true // BOoléen indiquant si on est sur la page de déart (= on n'a pas scrollé)
+    let externalPageOpened = false;
 
     // On prépare la page
     $('#page').addClass('loaded')
@@ -227,18 +228,33 @@ $(document).ready(() => {
     // Gestion des pages extérieures
     function showExternalPage() {
         $('#viewport').addClass('extpage')
+        externalPageOpened = true;
     }
     function hideExternalPage() {
         $('#viewport').removeClass('extpage')
+        externalPageOpened = false;
     }
 
     function loadPage(page) {
         // history.pushState(false, false, '#'+page)
-        window.location.hash = '#' + page
-        $('#extpage-content').load(page+'.html #content', function() {
-            showExternalPage()
-            console.log('hey')
-        })
+        function load() {
+            window.location.hash = '#' + page
+            $('#extpage-content').load(page+'.html #content', function() {
+                showExternalPage()
+                if(page === "pages/resa") {
+                    activerValidateur()
+                }
+            })
+        }
+        if (externalPageOpened) {
+            $('#extpage').addClass('dark')
+            setTimeout(function() {
+                load()
+                $('#extpage').removeClass('dark')
+            }, 500)
+        } else {
+            load()
+        }
     }
 
     let autoPage = function () {
