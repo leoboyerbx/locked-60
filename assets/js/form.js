@@ -46,7 +46,8 @@ function activerValidateur() {
             },
             numero: {
                 required : true,
-                number: true
+                number: true,
+                minlength: 10
             }
         },
         messages: {
@@ -72,7 +73,8 @@ function activerValidateur() {
             },
             numero : {
                 required : "   Veuillez renseigner ce champ",
-                number : "   Veuillez rentrer un numéro de téléphone valide"
+                number : "   Veuillez rentrer un numéro de téléphone valide",
+                minlength : "   Veuillez rentrer un numéro de téléphone valide"
             }
         },
         success : function(label){
