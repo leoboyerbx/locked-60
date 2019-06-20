@@ -40,6 +40,9 @@ function activerValidateur() {
                 required : true,
                 range: [1, 3]
             },
+            salleselect: {
+              required: true
+            },
             nombre: {
                 required : true,
                 range: [3, 5]
@@ -62,6 +65,9 @@ function activerValidateur() {
                 required : "   Veuillez renseigner ce champ",
                 number : "   Veuillez rentrer une heure valide",
                 range : "   L'Escape Game <i> \" Locked in 60' \"</i> est ouvert de 9h à 20h, du mardi au samedi"
+            },
+            salleselect: {
+                required: "   Veuillez renseigner ce champ"
             },
             salle: {
                 required : "   Veuillez renseigner ce champ",

@@ -174,6 +174,7 @@ $(document).ready(() => {
 
 
     //Gestion du menu
+
     function toggleMenu() {
         $('#menubutton').toggleClass('open')
         $('#menu').toggleClass('open')
@@ -224,10 +225,23 @@ $(document).ready(() => {
 
 
 
+    let extObserver = new IntersectionObserver(function (observables) {
+        // observables est un tableau contenant des IntersectionObserverEntry
+        observables.forEach(observable => {
+            if (observable.intersectionRatio > 0.5) {
+                observable.target.classList.remove('not-visible')
+                extObserver.unobserve(observable.target)
+            }
+        })
+    }, {
+        root: $('#extpage').get(0),
+        threshold: [0.6]
+    })
 
     // Gestion des pages extérieures
     function showExternalPage() {
         $('#viewport').addClass('extpage')
+        $('#extpage').scrollTop(0)
         externalPageOpened = true;
     }
     function hideExternalPage() {
@@ -244,6 +258,10 @@ $(document).ready(() => {
                 if(page === "pages/resa") {
                     activerValidateur()
                 }
+                $('#extpage').get(0).querySelectorAll('.scroll-appear').forEach(item => {
+                    item.classList.add('not-visible')
+                    extObserver.observe(item)
+                })
             })
         }
         if (externalPageOpened) {
