@@ -484,7 +484,6 @@ body {
 .image, .image-header {
     height: 100%;
     width: 100%;
-    background-color: red;
     background-size: cover;
     background-position: center center;
 }

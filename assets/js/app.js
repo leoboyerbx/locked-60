@@ -13,7 +13,6 @@ $(document).ready(() => {
         $("#intro-container").addClass('min')
         $('.st0').addClass('hidden')
         closeVideo()
-        console.log('scrolltopage')
         startPage = false
     }
     let incited = false
@@ -30,7 +29,6 @@ $(document).ready(() => {
         $("#page").removeClass('visible')
         $("#intro-container").removeClass('min')
         $('.st0').removeClass('hidden')
-        console.log('scrolltohome')
         startPage = true
         if (!incited) {
             incite()
@@ -165,7 +163,6 @@ $(document).ready(() => {
 
     // rectangle parrallax
     let initTop = $('#avant-lancement-wrapper').position().top
-    console.log(initTop)
     function updateRect() {
         let val = ($('#rect-lancement').get(0).getBoundingClientRect().top)/4 - $(window).height()/10
         $('#rect-lancement').css('transform', 'translate3d(0, '+ (-val) +'px, 0)')
