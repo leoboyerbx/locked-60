@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="298b89d8-15b2-4d8a-bbc8-5a6630d6a2be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salles/bastille.html" beforeDir="false" afterPath="$PROJECT_DIR$/salles/bastille.html" afterDir="false" />
-    </list>
+    <list default="true" id="298b89d8-15b2-4d8a-bbc8-5a6630d6a2be" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +259,7 @@
       <workItem from="1560840071420" duration="23844000" />
       <workItem from="1560869610523" duration="4086000" />
       <workItem from="1560925585387" duration="174000" />
-      <workItem from="1560925764120" duration="27889000" />
+      <workItem from="1560925764120" duration="28018000" />
     </task>
     <task id="LOCAL-00001" summary="Travail au mardi soir">
       <created>1560873961191</created>
@@ -290,11 +286,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55993000" />
+    <option name="totallyTimeSpent" value="56122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1088" y="-1103" width="1096" height="1936" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15830116" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
