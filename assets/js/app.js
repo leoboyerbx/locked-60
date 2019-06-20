@@ -218,7 +218,7 @@ $(document).ready(() => {
             }, 500)
         }
     }
-    $('#menulist a').click(function (ev) {
+    $('#menulist a, .lien-menu').click(function (ev) {
         ev.preventDefault()
         goTo($(this).attr('href'))
     })
@@ -294,18 +294,16 @@ $(document).ready(() => {
 
 
 
-    // Fonction cachée code Konami
-    var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
-        n = 0;
-    $(document).keydown(function (e) {
-        if (e.keyCode === k[n++]) {
-            if (n === k.length) {
-                alert('Konami !!!'); // à remplacer par votre code
-                n = 0;
-                return false;
-            }
-        } else {
-            n = 0;
-        }
-    });
+
+    //Leaflet footer
+   let maCarte = L.map('leaflet').setView([45.198975, 5.7252], 13);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibGVvYm95ZXJieCIsImEiOiJjand1aDBrbXUwcDNoM3ltdXNvaWFpYnVyIn0.SypxeXY3LMKkKQA5kQZAug', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoibGVvYm95ZXJieCIsImEiOiJjand1aDBrbXUwcDNoM3ltdXNvaWFpYnVyIn0.SypxeXY3LMKkKQA5kQZAug'
+    }).addTo(maCarte);
+
+    let marker = L.marker([45.198975, 5.7252]).addTo(maCarte);
+
 })

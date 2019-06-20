@@ -12,9 +12,15 @@
 
     <link rel="stylesheet" href="assets/lib/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/lib/leaflet/leaflet.css" />
+
+
     <script defer src="assets/lib/jquery/jquery.min.js"></script>
     <script defer src="assets/lib/jquery-validation/jquery.validate.js"></script>
     <script defer src="assets/lib/countdown.min.js"></script>
+    <script defer src="assets/lib/leaflet/leaflet.js"></script>
+
+
     <script defer src="assets/js/app.js"></script>
     <script defer src="assets/js/form.js"></script>
 </head>
@@ -106,7 +112,7 @@
                             <h2 class="titre-section"> D'autres univers </h2>
                             <div class="texte-image text-contenu">
                                 <p>Chaque salle proposée possède un thème. Ce thème vous met en immersion et vous plonge au cœur d’univers mémorables. </p>
-                                <p>Chacune renferme des énigmes uniques et une histoire contée par votre Game Master, qui est là pour vous aider. En effet, vous allez peut-être vous retrouver bloqué à des moments, et votre Game Master sera là pour vous livrer des indications, des indices supplémentaire. </p>
+                                <p>Chacune renferme des énigmes uniques et une histoire contée par votre Game Master, qui est là pour vous aider. En effet, vous allez peut-être vous retrouver bloqué à des moments, et votre Game Master sera là pour vous livrer des indications, des indices supplémentaires. </p>
                                 <p>Mais il ne vous dévoilera pas tout non plus, les meilleurs indices viendront de votre esprit.</p>
                             </div>
                         </div>
@@ -159,18 +165,19 @@
                     <div class="row scroll-appear" id="salles">
                       <div class="col-lg-4">
                             <a href="#salles/bastille">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card card-salle" style="width: 18rem;">
                                     <span class="card-img-top" style="background-image: url(assets/img/bastille1.jpg)"></span>
                                     <div class="card-body">
                                         <h5 class="card-title">Prisonniers de la Bastille</h5>
                                         <p class="card-text">Salle 1</p>
+
                                     </div>
                                 </div>
                             </a>
                       </div>
                       <div class="col-lg-4">
                             <a href="#salles/asylum">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card card-salle" style="width: 18rem;">
                                 <span class="card-img-top" style="background-image: url(assets/img/asylum.jpg)"></span>
                                 <div class="card-body">
                                     <h5 class="card-title">Asylum</h5>
@@ -181,7 +188,7 @@
                       </div>
                       <div class="col-lg-4">
                             <a href="#salles/titanic">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card card-salle" style="width: 18rem;">
                                 <span class="card-img-top" style="background-image: url(assets/img/titanic.jpg)"></span>
                                 <div class="card-body">
                                     <h5 class="card-title">La légende du Titanic</h5>
@@ -226,7 +233,7 @@
                     <div class="row">
                         <div class="col-3"></div>
                         <div class="col-6">
-                            <p class='titre-section scroll-appear'> <i class="far fa-clock"></i> Horaires d'ouverture : </p>
+                            <p class='titre-section scroll-appear'> <i class="far fa-clock"></i> Horaires d'ouverture</p>
                             <p class="texte-image text-contenu scroll-appear">
                                 A partir du 1er septembre 2019<br><br>
                                 • Du mardi au samedi <br>
@@ -235,38 +242,38 @@
                             </p>
                         </div>
                     </div>
-
-                </div>
-
-                <footer class="container-fluid" id="footer-accueil">
-                    <div id="cont-footer">
-                        <div class="row">
-                            <div class="col-4">
-                                <h1 class="titre-footer">Contactez-nous</h1>
-                                <p class="contenu-footer">
-                                    Email : lockedin60@gmail.com <br/>
-                                    Téléphone : 04 74 85 94 75
-                                </p>
-                            </div>
-                            <div class="col-4">
-                                <h1>Suivez-nous</h1>
-                                <a href='' class="fa-2x fab fa-facebook lien-sn"></a>
-                                <a href='' class="fa-2x fab fa-twitter lien-sn"></a>
-                                <a href='' class="fa-2x fab fa-instagram lien-sn"></a>
-                            </div>
-                            <div class="col-4">
-                                <h1 class="titre-footer">Où nous trouver</h1>
-                                <p class="contenu-footer">
-                                    5 chemin de la Bastille <br/>
-                                    Grenoble, 38000 <br/>
-                                    <a href="https://goo.gl/maps/jiqErw3j7k2tF3XC6" target="_blank" id="carte">Voir sur la carte</a>
-                                </p>
-                            </div>
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-6">
+                            <p class='titre-section scroll-appear'> <i class="far fa-clock"></i> Nous contacter</p>
+                            <p class="texte-image text-contenu text-center scroll-appear">
+                                contact@locked-in-60.cf <br><br>
+                                +33 (0) 4 74 85 94 75
+                            </p>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="mentions">Locked in 60' - Tous droits réservés</p>
-                            </div>
+                    </div>
+                </div>
+                <footer class="container-fluid" id="footer-accueil">
+                    <div class="row">
+                        <div class="col-12" id="footer-map">
+                            <div id="leaflet"></div>
+                        </div>
+                    </div>
+                    <div class="row" id="footer-infos">
+                        <div class="col-3 text-center">
+                            <img src="assets/img/logo_dark.svg" id="logo-footer" alt="">
+                        </div>
+                        <div class="col-6">
+                            <a href="#" class="lien-slide lien-footer lien-menu" data-texte="Accueil">Accueil</a>
+                            <a href="#concept" class="lien-slide lien-footer lien-menu" data-texte="Le Concept">Le Concept</a>
+                            <a href="#en-ce-moment" class="lien-slide lien-footer lien-menu" data-texte="En ce moment">En ce moment</a>
+                            <a href="#pages/resa" class="lien-slide lien-footer" data-texte="Réserver">Réserver</a>
+                        </div>
+                        <div class="col-3" id="footer-sn">
+                            <a href='' class="fa-lg fab fa-facebook lien-sn"></a>
+                            <a href='' class="fa-lg fab fa-twitter lien-sn"></a>
+                            <a href='' class="fa-lg fab fa-instagram lien-sn"></a>
+
                         </div>
                     </div>
                 </footer>
